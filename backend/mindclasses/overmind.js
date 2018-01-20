@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 class Overmind{
     constructor (){
 
@@ -7,6 +9,12 @@ class Overmind{
     }
     addSentence(sentence){
        console.log('minding ' + sentence);
+       fs.appendFile(process.cwd() + "\\useridentification.txt", sentence + "\r\n", function(err) {
+        if(err) {
+            return console.log(err);
+        }
+    }); 
+    
     }
 }
 
